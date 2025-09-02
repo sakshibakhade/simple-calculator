@@ -125,5 +125,4 @@ document.addEventListener("DOMContentLoaded", () => {
   
 menubtn.addEventListener("click", menutoggle);
   clearhistory.addEventListener("click", clearhistorylist);
-  historylist.addEventListener("click", addtohistory);
 });  
