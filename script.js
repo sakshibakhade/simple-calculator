@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const calculated = () => {
     try {
+      const expression = currentinput;
       const result = Function(`"use strict"; return (${currentinput})`)();
       input.value = result;
 
@@ -92,6 +93,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+     historylist.addEventListener("click", (e) => {
+       if (e.target.tagName === "LI") {
+         currentinput = e.target.textContent.split("=")[0].trim();
+         updatedisplay();
+       }
+     });
+  
     const clearhistorylist = () => {
       history = [];
       historylist.innerHTML = "";
