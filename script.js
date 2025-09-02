@@ -50,12 +50,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const calculated = () => {
     try {
+      const expression = currentinput;
       const result = Function(`"use strict"; return (${currentinput})`)();
       input.value = result;
 
       currentinput = result.toString();
       
-      history.push({ expression: currentinput, result });
+      history.push({expression, result });
       
     } catch {
       input.value = "Error";
@@ -100,6 +101,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // Event listeners
+  history.forEach((item) => {
+    const li = document.createElement("li");
+    li.textContent = `${item.expression} = ${item.result}`;
+    historylist.appendChild(li);
+  });
+
   numbtn.forEach((button) => {
     button.addEventListener("click", () => addnumber(button.textContent));
   });
@@ -117,5 +124,4 @@ document.addEventListener("DOMContentLoaded", () => {
   
 menubtn.addEventListener("click", menutoggle);
   clearhistory.addEventListener("click", clearhistorylist);
-  historylist.addEventListener("click", addtohistory);
 });  
