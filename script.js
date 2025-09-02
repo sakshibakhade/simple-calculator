@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       currentinput = result.toString();
       
-      history.push({ expression: currentinput, result });
+      history.push({ expression, result });
       
     } catch {
       input.value = "Error";
