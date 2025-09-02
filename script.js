@@ -56,7 +56,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       currentinput = result.toString();
       
+<<<<<<< HEAD
       history.push({expression, result });
+=======
+      history.push({ expression, result });
+>>>>>>> de2a3447609b39bcf7189af9c9ff3c09195a2386
       
     } catch {
       input.value = "Error";
@@ -94,6 +98,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+     historylist.addEventListener("click", (e) => {
+       if (e.target.tagName === "LI") {
+         currentinput = e.target.textContent.split("=")[0].trim();
+         updatedisplay();
+       }
+     });
+  
     const clearhistorylist = () => {
       history = [];
       historylist.innerHTML = "";
