@@ -3,7 +3,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url('calculator.jpg');
+  background-image: url('image/calculator.jpg');
   background-repeat: no-repeat; /* fixed: was 'none' */
   background-size: cover;
   background-attachment: fixed;
