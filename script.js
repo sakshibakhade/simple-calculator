@@ -78,7 +78,8 @@ document.addEventListener("DOMContentLoaded", () => {
       buttonsWrapper.style.display = "none";
       historypanel.style.display = "block";
       menubtn.textContent = "← Back";
-      menubtn.style.marginRight= "40px"
+      menubtn.style.marginRight = "40px"
+      historylist.innerHTML = "";
     
      history.forEach((item) => {
        const li = document.createElement("li");
@@ -101,11 +102,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // Event listeners
-  history.forEach((item) => {
-    const li = document.createElement("li");
-    li.textContent = `${item.expression} = ${item.result}`;
-    historylist.appendChild(li);
-  });
+ historylist.addEventListener("click", (e) => {
+   if (e.target.tagName === "LI") {
+     currentinput = e.target.textContent.split("=")[0].trim();
+     updatedisplay();
+   }
+ });
+
 
   numbtn.forEach((button) => {
     button.addEventListener("click", () => addnumber(button.textContent));
