@@ -56,11 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       currentinput = result.toString();
       
-<<<<<<< HEAD
       history.push({expression, result });
-=======
-      history.push({ expression, result });
->>>>>>> de2a3447609b39bcf7189af9c9ff3c09195a2386
       
     } catch {
       input.value = "Error";
@@ -68,11 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
   
-  const addtohistory = ({ expression, result }) => {
-    const li = document.createElement("li");
-    li.textContent = `${expression} = ${result}`;
-    historylist.appendChild(li);
-    };
+  
 
   const menutoggle = () => {
 
@@ -83,8 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
       historypanel.style.display = "block";
       menubtn.textContent = "← Back";
       menubtn.style.marginRight = "40px"
+
       historylist.innerHTML = "";
-    
+      
      history.forEach((item) => {
        const li = document.createElement("li");
        li.textContent = `${item.expression} = ${item.result}`;
@@ -98,17 +91,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-     historylist.addEventListener("click", (e) => {
-       if (e.target.tagName === "LI") {
-         currentinput = e.target.textContent.split("=")[0].trim();
-         updatedisplay();
-       }
-     });
   
     const clearhistorylist = () => {
       history = [];
       historylist.innerHTML = "";
-      updatedisplay();
     };
 
 
