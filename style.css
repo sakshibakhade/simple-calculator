@@ -3,7 +3,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url('image/calculator.jpg');
+  background-image: url('image/background-image-calculator.jpeg');
   background-repeat: no-repeat; /* fixed: was 'none' */
   background-size: cover;
   background-attachment: fixed;
@@ -88,7 +88,8 @@ button:hover {
 }
 
 /* Menu button */.menu-btn {
-
+position: relative;
+right: 1rem;
  margin-bottom: 1rem;
   padding: 0.4rem 0.8rem;
   background-color: #F3C623;
@@ -154,4 +155,54 @@ button:hover {
 
 .calculator.show-history #history-panel {
   display: block;
+}
+
+/* Css of index.html file */
+body.intro-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #00c6ff, #f9d423);
+  font-family: Arial, sans-serif;
+}
+
+.intro-container {
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.intro-title {
+  font-size: 3rem;
+  color: #222;
+  animation: zoomIn 2s ease-in-out;
+}
+
+.go-btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: #f9d423;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.go-btn:hover {
+  background: #00c6ff;
+  color: #fff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
