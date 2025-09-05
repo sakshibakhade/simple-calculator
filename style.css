@@ -3,7 +3,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url('image/background-image-calculator.jpeg');
+  background: linear-gradient(135deg, #00c6ff, #f9d423);
   background-repeat: no-repeat; /* fixed: was 'none' */
   background-size: cover;
   background-attachment: fixed;
