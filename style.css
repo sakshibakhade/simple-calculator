@@ -189,6 +189,7 @@ body.intro-page {
   background: #f9d423;
   cursor: pointer;
   transition: 0.3s;
+  box-shadow: 2px 2px 2px black;
 }
 
 .go-btn:hover {
